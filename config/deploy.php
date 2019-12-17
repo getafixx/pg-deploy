@@ -93,7 +93,7 @@ return [
     'options' => [
         'application' => env('APP_NAME', 'Laravel'),
         'repository' => 'git@github.com:getafixx/paint.garden.git',
-        //'php_fpm_service' => 'php7.2-fpm',
+        'php_fpm_service' => 'php7.2-fpm',
         'git_tty' => true,
     ],
 
@@ -109,10 +109,10 @@ return [
     */
 
     'hosts' => [
-        '139.162.247.120' => [
+       /* '139.162.247.120' => [
             'deploy_path' => '/home/justin/sites/paint.garden/test',
             'user' => 'justin',
-        ],
+        ],*/
     ],
 
     /*
@@ -127,7 +127,8 @@ return [
     */
 
     'localhost' => [
-        //
+        'deploy_path' => '/home/justin/sites/paint.garden/test',
+        'user' => 'justin',
     ],
 
     /*
