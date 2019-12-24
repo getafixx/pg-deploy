@@ -157,7 +157,7 @@ localhost()
 
 set('deploy_path', '/home/justin/sites/paint.garden/test');
 set('user', 'getafixx');
-set('http_user', 'root');
+set('http_user', 'justin');
 
 set('configFile', '~/.ssh/config');
 //set('identityFile', '/root/.ssh/pg-deploy');

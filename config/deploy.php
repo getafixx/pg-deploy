@@ -95,6 +95,16 @@ return [
         'repository' => 'git@github.com:getafixx/paint.garden.git',
         'php_fpm_service' => 'php7.2-fpm',
         'git_tty' => true,
+        'user'         => 'root',
+        'configFile'   => '~/.ssh/config',
+        'identityFile' => '~/.ssh/id_rsa',
+        'forwardAgent' => true,
+        'multiplexing' => true,
+        'sshOptions'   => [ 
+            'UserKnownHostsFile' => '/dev/null',
+            'StrictHostKeyChecking' => 'no',
+            // ...
+        ],
     ],
 
     /*
@@ -107,12 +117,24 @@ return [
     | deployment. Read more about how to configure them in the docs.
     |
     */
-
     'hosts' => [
-       /* '139.162.247.120' => [
+        /* '139.162.247.120' => [
             'deploy_path' => '/home/justin/sites/paint.garden/test',
             'user' => 'justin',
         ],*/
+        'localhost' => [
+            // ...
+            'user'         => 'justin',
+            'configFile'   => '~/.ssh/config',
+            'identityFile' => '~/.ssh/id_rsa',
+            'forwardAgent' => true,
+            'multiplexing' => true,
+            'sshOptions'   => [ 
+                'UserKnownHostsFile' => '/dev/null',
+                'StrictHostKeyChecking' => 'no',
+                // ...
+            ],
+        ],
     ],
 
     /*
@@ -128,7 +150,17 @@ return [
 
     'localhost' => [
         'deploy_path' => '/home/justin/sites/paint.garden/test',
-        'user' => 'justin',
+       
+         'user'         => 'root',
+            'configFile'   => '~/.ssh/config',
+            'identityFile' => '~/.ssh/pg-deploy',
+            'forwardAgent' => true,
+            'multiplexing' => true,
+            'sshOptions'   => [ 
+                'UserKnownHostsFile' => '/dev/null',
+                'StrictHostKeyChecking' => 'no',
+                // ...
+            ],
     ],
 
     /*
