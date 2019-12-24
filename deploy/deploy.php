@@ -115,7 +115,7 @@ task('deploy', ['deploy:prepare',
     'deploy:update_code',
     'deploy:vendors',
     'deploy:shared',
-    'database:migrate',
+    //'database:migrate',
     'deploy:symlink',
 ])->desc('Deploy your project');
 
