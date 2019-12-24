@@ -25,12 +25,12 @@ class DeployController extends Controller
 
     public function deployerTest()
     {      
-
+        //'localhost',
        /* $exitCode = $this->call('deploy ', [
                 'localhost', '--file' => base_path('deploy/deploy.php')
             ]);*/
         $exitCode = \Artisan::call('deploy', [
-                'localhost', '--file' => base_path('deploy/deploy.php')
+                '--file' => base_path('deploy/deploy.php', 'paint.garden.deploytest')
             ]);
         
         return response()->json(['result' => $exitCode], 200);
