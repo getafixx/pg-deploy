@@ -129,38 +129,13 @@ after('deploy:failed', 'deploy:unlock');
 // Migrate database before symlink new release.
 before('deploy:symlink', 'artisan:migrate');
 
-/*host('localhost')
-    ->stage('production')    
-    ->user('justin')
-    ->identityFile('~/.ssh/id_rsa')    
-    ->set('deploy_path', '/home/justin/sites/paint.garden/test')
-    ->forwardAgent(true)
-    ->multiplexing(true)
-    ->addSshOption('UserKnownHostsFile', '/dev/null')
-    ->addSshOption('StrictHostKeyChecking', 'no');*/
-/*
-localhost()
-    ->stage('production')    
-    ->user('root')
-    ->identityFile('/root/.ssh/pg-deploy')    
-    ->set('deploy_path', '/var/www/testtest/test')
-    ->forwardAgent(true)
-    ->multiplexing(true)
-    ->addSshOption('UserKnownHostsFile', '/dev/null')
-    ->addSshOption('StrictHostKeyChecking', 'no');
-*/
-/*task('deploy:update_code', function () {
-    // Your custom update code
-    justinsGit();
-});
-*/
 
 set('deploy_path', '/home/justin/sites/paint.garden/test');
 set('user', 'getafixx');
 set('http_user', 'justin');
 
-set('configFile', '~/.ssh/config');
-//set('identityFile', '/root/.ssh/pg-deploy');
+//set('configFile', '/home/.ssh/config');
+set('identityFile', '/home/www-data/.ssh/pg-deploy');
 set('http_user', 'root');
 set('forwardAgent', true);
 set('multiplexing', true);
@@ -172,23 +147,8 @@ $sshOptions =  [
         ];
 set('sshOptions', $sshOptions);
 
-
-/*        'user'         => 'root',
-        'configFile'   => '~/.ssh/config',
-        'identityFile' => '~/.ssh/id_rsa',
-        'forwardAgent' => true,
-        'multiplexing' => true,
-        'sshOptions'   => [ 
-            'UserKnownHostsFile' => '/dev/null',
-            'StrictHostKeyChecking' => 'no',
-            // ...
-        ],*/
-
 task('paint.garden.deploytest', function() {
-    //set('deploy_path', '/var/www/testtest/test');
-    //set('user', 'getafixx');
-    //set('previous_release', get('local_cache_repository'));
-    //set('keep_releas'es', get('local_keep_releases'));
+
 
     invoke('deploy:prepare');
     invoke('deploy:release');

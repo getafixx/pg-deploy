@@ -96,8 +96,8 @@ return [
         'php_fpm_service' => 'php7.2-fpm',
         'git_tty' => true,
         'user'         => 'root',
-        'configFile'   => '~/.ssh/config',
-        'identityFile' => '~/.ssh/id_rsa',
+       /* 'configFile'   => '~/.ssh/config',
+        'identityFile' => '~/.ssh/id_rsa',*/
         'forwardAgent' => true,
         'multiplexing' => true,
         'sshOptions'   => [ 
@@ -122,7 +122,7 @@ return [
             'deploy_path' => '/home/justin/sites/paint.garden/test',
             'user' => 'justin',
         ],*/
-        'localhost' => [
+        /*'localhost' => [
             // ...
             'user'         => 'justin',
             'configFile'   => '~/.ssh/config',
@@ -134,7 +134,7 @@ return [
                 'StrictHostKeyChecking' => 'no',
                 // ...
             ],
-        ],
+        ],*/
     ],
 
     /*
@@ -152,8 +152,8 @@ return [
         'deploy_path' => '/home/justin/sites/paint.garden/test',
        
          'user'         => 'root',
-            'configFile'   => '~/.ssh/config',
-            'identityFile' => '~/.ssh/pg-deploy',
+            //'configFile'   => '~/.ssh/config',
+            'identityFile' => '/home/www-data/.ssh/pg-deploy',
             'forwardAgent' => true,
             'multiplexing' => true,
             'sshOptions'   => [ 
